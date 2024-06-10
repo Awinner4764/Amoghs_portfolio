@@ -1,6 +1,6 @@
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-let interval = null;
+let interval = 1;
 
 document.querySelector("h1").onmouseover = event => {  
   let iteration = 0;
