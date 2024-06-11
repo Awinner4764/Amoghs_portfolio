@@ -755,8 +755,6 @@ footer i:hover{
     }
 }
 h1 {
-  font-family: 'Space Mono', monospace;
   font-size: clamp(3rem, 7vw, 7rem);
   color: white;
-  border-radius: clamp(0.4rem, 0.75vw, 1rem);
 }
