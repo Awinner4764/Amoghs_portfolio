@@ -271,7 +271,7 @@ section .title::after{
  .services{
      color: white;
      background:black;
-     background: url("images/leaves_bushes_green_174515_3840x2400.jpg");
+     background: #99ff99;
      background-size: 2000px;
  }
  .services .title::before{
