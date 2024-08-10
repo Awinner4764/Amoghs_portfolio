@@ -11,7 +11,7 @@ html{
 }
 
 body{
-    background: #a901ac;
+    background: #99ff99;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -132,7 +132,7 @@ body{
 
 .home {
     display: flex;
-    background: #a901ac;
+    background: #99ff99;
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
