@@ -550,7 +550,7 @@ section .title::after{
 
 /* footer styling */
 footer{
-    background: url("images/headerpic.png") ;
+    background: #99ff99;
     padding: 20px 23px;
     color: white;
 }
