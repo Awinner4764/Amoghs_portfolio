@@ -215,7 +215,7 @@ section .title::after{
 }
 /* about section styling */
 .about{
-    background: url("images/starry_image.jpg");
+    background: #99ff99;
     background-size: 2000px;
 }
 .about .about-content .left{
