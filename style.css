@@ -241,7 +241,7 @@ section .title::after{
     margin-bottom: 10px;
  }
  .about .about-content .right .text span{
-     color: #a901ac;
+     color: white;
  }
  .about .about-content .right .paragraph{
      color: white;
