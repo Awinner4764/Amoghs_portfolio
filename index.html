@@ -3,62 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shiva's Blog</title>
+    <title>My Blog</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
+
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div style="text-align:center;">Shiva's Blog</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li> <!-- Links to hero section -->
-                <li><a href="#about">About</a></li> <!-- Add 'About' section -->
-                <li><a href="#posts">Blog Posts</a></li> <!-- Links to blog posts section -->
-                <li><a href="#contact">Contact</a></li> <!-- Add 'Contact' section -->
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-    </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Welcome to My Blog</h1>
-            <p>Add description here</p>
-          </div>
-    </section>
-    <section class="blog-posts" id="posts">>
-        <h2>Posts</h2>
-        <div id="posts-container">
-            <!-- Blog posts will be inserted here by JavaScript -->
-        </div>
-    </section>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">My Blog</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="submit-post.html">Submit Post</a></li>
+        </ul>
+    </div>
 
-    <section class="submit-post">
-        <h2>Submit Your Blog Post</h2>
-        <form id="postForm">
-            <input type="text" id="title" name="title" placeholder="Post Title" required>
-            <textarea id="content" name="content" placeholder="Write your post here..." required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Here is our contact information...</p>
+    <!-- Blog Titles Section -->
+    <section class="blog-posts">
+        <h2>Recent Blog Posts</h2>
+        <ul id="post-list"></ul> <!-- Post titles will be dynamically loaded here -->
     </section>
 
     <footer>
-        <p>&copy; 2024 By Amogh. All Rights Reserved.</p>
+        &copy; 2024 My Blog. All rights reserved.
     </footer>
-    <!-- Firebase JS SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
-    <!-- Add your Firebase config here -->
+
     <script>
+        // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyCy3rmEhSOJVu_kZavLBeJFgMfpbXsmw00",
             authDomain: "client1-blog.firebaseapp.com",
@@ -67,8 +40,25 @@
             messagingSenderId: "212189181424",
             appId: "1:212189181424:web:4e1c8f71bd59d211c3d935"
         };
-        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Fetch blog posts from Firebase and display titles
+        const postList = document.getElementById('post-list');
+
+        db.collection('posts').get().then(snapshot => {
+            snapshot.forEach(doc => {
+                const post = doc.data();
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="blogpost.html?id=${doc.id}">${post.title}</a>`;
+                postList.appendChild(li);
+            });
+        }).catch(error => {
+            console.error('Error fetching blog posts:', error);
+        });
     </script>
-    <script type="module" src="scripts.js"></script>
+
 </body>
 </html>
