@@ -8,6 +8,7 @@
 /* Body */
 body {
     font-family: Arial, sans-serif;
+    background: url("slum_pic.webp") no-repeat center;
     line-height: 1.6;
     background-color: #f4f4f4;
     padding-top: 60px;
