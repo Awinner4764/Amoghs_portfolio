@@ -17,7 +17,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #333333); /* Opaque navbar */
+    background-color: #000000); /* Opaque navbar */
     color: #fff;
     padding: 15px;
     position: fixed;
