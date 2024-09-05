@@ -11,10 +11,10 @@
         <nav class="navbar">
             <div style="text-align:center;">Shiva's Blog</div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li> <!-- Links to hero section -->
+                <li><a href="#about">About</a></li> <!-- Add 'About' section -->
+                <li><a href="#posts">Blog Posts</a></li> <!-- Links to blog posts section -->
+                <li><a href="#contact">Contact</a></li> <!-- Add 'Contact' section -->
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -24,12 +24,13 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Welcome to My Blog</h1>
-        <p>Add description here</p>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to My Blog</h1>
+            <p>Add description here</p>
+          </div>
     </section>
-
-    <section class="blog-posts">
+    <section class="blog-posts" id="posts">>
         <h2>Posts</h2>
         <div id="posts-container">
             <!-- Blog posts will be inserted here by JavaScript -->
@@ -43,6 +44,11 @@
             <textarea id="content" name="content" placeholder="Write your post here..." required></textarea>
             <button type="submit">Submit</button>
         </form>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Here is our contact information...</p>
     </section>
 
     <footer>
