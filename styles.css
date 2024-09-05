@@ -54,15 +54,19 @@ body {
 
 /* Hero Section */
 .hero {
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
     text-align: center;
-    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional dark overlay for better text contrast */
 }
 
 .hero h1 {
     text-align: center;
     font-size: 48px;
-    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
@@ -77,6 +81,7 @@ body {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 60px auto 20px auto; /* Adjust this margin to increase/decrease scrolling distance */
 }
 
 .blog-posts h2 {
