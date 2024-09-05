@@ -9,13 +9,15 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    padding-top: 60px;
+    background: url('slum_pic.webp') no-repeat center center/cover;
+    background-attachment: fixed;
+    color: #fff;
+    padding-top: 60px; /* Space for fixed navbar */
 }
 
 /* Navbar */
 .navbar {
-    background-color: rgba(51, 51, 51, 0.9); /* Opaque navbar */
+    background-color: rgba(51, 51, 51, 0.8); /* Opaque navbar */
     color: #fff;
     padding: 15px;
     position: fixed;
@@ -54,10 +56,12 @@ body {
 
 /* Hero Section */
 .hero {
-    background: url('slum_pic.webp') no-repeat center center/cover;
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
     text-align: center;
-    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional dark overlay for better text contrast */
 }
 
 /* Blog Titles Section */
