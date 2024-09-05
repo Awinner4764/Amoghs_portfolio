@@ -56,12 +56,14 @@ body {
 
 /* Hero Section */
 .hero {
+    height: 100vh; /* Full viewport height */
+    background: url('slum_pic.webp') no-repeat center center/cover;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full screen height */
     text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Optional dark overlay for better text contrast */
+    position: relative;
 }
 
 /* Blog Titles Section */
