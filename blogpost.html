@@ -29,11 +29,7 @@
         &copy; 2024 My Blog. All rights reserved.
     </footer>
 
-    <script type="module">
-        // Import the Firebase modules you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
-
+    <script>
         // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyCy3rmEhSOJVu_kZavLBeJFgMfpbXsmw00",
@@ -44,9 +40,9 @@
             appId: "1:212189181424:web:4e1c8f71bd59d211c3d935"
         };
 
-        // Initialize Firebase and Firestore
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
 
         // Get post ID from URL
         const urlParams = new URLSearchParams(window.location.search);
@@ -54,10 +50,9 @@
 
         // Fetch the blog post by ID and display it
         if (postId) {
-            const postRef = doc(db, 'posts', postId);
-            getDoc(postRef).then(docSnap => {
-                if (docSnap.exists()) {
-                    const post = docSnap.data();
+            db.collection('posts').doc(postId).get().then(doc => {
+                if (doc.exists) {
+                    const post = doc.data();
                     document.getElementById('post-title').innerText = post.title;
                     document.getElementById('post-content').innerText = post.content;
                 } else {
